@@ -47,10 +47,12 @@ export default function PokemonInfo( { pokemon } ) {
                                         <img className="w-auto" src={spriteFrontS}  alt={pokemon.name} />
                                         {spriteBackS &&  (<img className="w-auto" src={spriteBackS}  alt={pokemon.name} />)}
                                     </div>
-                                    <div className="bg-blue-400 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
-                                        {shodownBackS &&  (<img className="w-auto" src={shodownBackS}  alt={pokemon.name} />)}
-                                        {shodownFrontS &&  (<img className="w-auto" src={shodownFrontS}  alt={pokemon.name} />)}
-                                    </div>
+                                    { shodownBackS && (
+                                        <div className="bg-blue-400 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
+                                        <img className="w-auto" src={shodownBackS}  alt={pokemon.name} />
+                                            <img className="w-auto" src={shodownFrontS}  alt={pokemon.name} />
+                                        </div>
+                                    )}
                                 </>
                                 : 
                                 <>  
@@ -58,10 +60,12 @@ export default function PokemonInfo( { pokemon } ) {
                                         <img className="w-auto" src={spriteFrontD}  alt={pokemon.name} />
                                         {spriteBackD &&  (<img className="w-auto" src={spriteBackD}  alt={pokemon.name} />)}
                                     </div>
-                                    <div className="bg-blue-400 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
-                                        {shodownBackD &&  (<img className="w-auto" src={shodownBackD}  alt={pokemon.name} />)}
-                                        {shodownFrontD &&  (<img className="w-auto" src={shodownFrontD}  alt={pokemon.name} />)}
-                                    </div>
+                                    {shodownBackD && (
+                                        <div className="bg-blue-400 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
+                                            <img className="w-auto" src={shodownBackD}  alt={pokemon.name} />
+                                            <img className="w-auto" src={shodownFrontD}  alt={pokemon.name} />
+                                        </div>
+                                    )}
                                 </>
                             }
                         </div>
