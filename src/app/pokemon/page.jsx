@@ -21,6 +21,8 @@ export default function Pokemon() {
             pokemonData && (
                 <div>
                     <h2>{pokemonData.name}</h2>
+                    <br />
+                    <img src={pokemonData.sprites.other["official-artwork"].front_default} alt="" />
                     <Link href={`/pokemon/${pokemonData.name}`}>
                         Ver Detalles
                     </Link>
