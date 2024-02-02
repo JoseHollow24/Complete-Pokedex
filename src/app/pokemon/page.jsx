@@ -21,7 +21,7 @@ export default function Pokemon() {
             pokemonData && (
                 <div>
                     <h2>{pokemonData.name}</h2>
-                    <Link href={`/${pokemonData.name}`}>
+                    <Link href={`/pokemon/${pokemonData.name}`}>
                         Ver Detalles
                     </Link>
                 </div>
