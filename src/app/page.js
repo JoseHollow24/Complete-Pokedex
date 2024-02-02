@@ -1,4 +1,3 @@
-import Image from "next/image";
 import i18n from '@/utils/i18n.js'
 
 export default function Home() {
