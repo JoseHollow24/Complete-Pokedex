@@ -26,7 +26,7 @@ export default  function Home() {
                   {
                   pokemonData && (
                       <div>
-                        <p class="text-slate-800 font-bold capitalize text-xl">{pokemonData.name}</p>
+                        <p className="text-slate-800 font-bold capitalize text-xl">{pokemonData.name}</p>
                         <Link
                           className=' text-sky-400 font-bold text-xl underline  text-center mt-2'
                            href={`/${pokemonData.name}`}
