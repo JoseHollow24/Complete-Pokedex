@@ -24,9 +24,6 @@ export default function Navbar() {
                     </h1>
                     <ul className='flex gap-2 items-center text-white font-bold'>
                         <li className='list-none'>
-                            <Link href="/pokemon">{i18n.t('pokemondex')}</Link>
-                        </li>
-                        <li className='list-none'>
                             <Link href="/cards">{i18n.t('cardsdex')}</Link>
                         </li>
                     </ul>

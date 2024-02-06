@@ -6,7 +6,7 @@ async function loadPokemon(id) {
     return data;
 }
 
-async function SinglePokemonPage( { params }) {
+export default async function SinglePokemonPage( { params }) {
 
    const singlePokemon = await loadPokemon(params.pokemonSingle);
 
@@ -19,5 +19,3 @@ async function SinglePokemonPage( { params }) {
         </>
     )
 }
-
-export default SinglePokemonPage

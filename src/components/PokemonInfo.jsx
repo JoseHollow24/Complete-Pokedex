@@ -5,8 +5,6 @@ import PokemonTypes from "./PokemonTypes";
 export default function PokemonInfo( { pokemon } ) {
     const [isShiny, setIsShiny] = useState(false);
     const handleClick = () => {
-        console.log('hols')
-        console.log(isShiny)
         setIsShiny(!isShiny);
     };
 
@@ -70,7 +68,7 @@ export default function PokemonInfo( { pokemon } ) {
                             }
                         </div>
                         <button 
-                            class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 active:bg-blue-800 mx-auto" 
+                            className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 active:bg-blue-800 mx-auto" 
                             onClick={handleClick}
                         >
                             Color { isShiny ? 'Normal' : 'Shiny' }
