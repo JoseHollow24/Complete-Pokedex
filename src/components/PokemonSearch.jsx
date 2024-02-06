@@ -1,8 +1,9 @@
 'use client'
 import { useState } from "react"
 
-export default function PokemonSearch( { onPokemonDataChange } ) {
+export default function CardSearch( { onPokemonDataChange } ) {
     const [pokemonName, setPokemonName] = useState('');
+    // const [pokemonApiDAta, setPokemonApiDAta] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -10,15 +11,28 @@ export default function PokemonSearch( { onPokemonDataChange } ) {
     }
 
     const searchPokemon = async () => {
-        try {
-            const lowerCasePokemonName = pokemonName.toLowerCase();
-            const response = await fetch (`https://pokeapi.co/api/v2/pokemon/${lowerCasePokemonName}`);
-            const data = await response.json();
-            onPokemonDataChange(data);
-        } catch (error){
-            console.log('Error al buscar el pokemon:', error)
-        }
+        if (pokemonName.trim() !== '') {
+            try {
+                const lowerCasePokemonName = pokemonName.toLowerCase();
+                // Realiza la primera llamada a la API
+                const pokedexResponse = await fetch (`https://pokeapi.co/api/v2/pokemon/${lowerCasePokemonName}`);
+                const dexData = await pokedexResponse.json();
+
+                // Realiza la segunda llamada a la API
+                const cardDexResponse = await fetch (`https://api.pokemontcg.io/v2/cards?q=name:${lowerCasePokemonName}`);
+                const cardsData = await cardDexResponse.json();
+                
+                onPokemonDataChange({dex: dexData, card: cardsData});
+              } catch (error) {
+                // setPokemonApiDAta({Error: 'El pokemon no se encontró en alguna de las Apis'});
+                // onPokemonDataChange(pokemonApiDAta);
+                console.error('Error en las llamadas a la API', error);
+              }
+        }else (
+            console.log('rellene el formulario')
+        )
     }
+
 
     return (
         <>
