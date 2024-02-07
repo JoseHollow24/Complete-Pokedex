@@ -11,12 +11,119 @@ export default function CardInfo( { pokemon } ) {
               <div class="md:col-span-3">
                 <div class="max-w-80 grid mx-auto">
                     <p class="text-slate-800 font-bold">
-                        Nombre: 
-                        <span class="text-red-400 font-bold capitalize">garchomp</span>
-                    </p>
-                        <p class="text-slate-800 font-bold">Nº: 
-                        <span class="text-red-400 font-bold">570</span>
-                    </p>
+                        {pokemon.name} hp:{pokemon.hp} - 
+                            {
+                                pokemon.types.map((type, index) => (
+                                <span key={index}>
+                                    {type}
+                                </span> 
+                            ))}
+                        </p>
+                    <div>
+                        {pokemon.supertype} - 
+                        {
+                            pokemon.subtypes.map((subtype, index) => (
+                            <span key={index}>
+                                 {subtype}
+                            </span> 
+                        ))}
+                        <hr />
+                    </div>
+                    <div>
+                        {pokemon.abilities &&
+                            pokemon.abilities.map((ability, index) => (
+                                <p key={index}>
+                                    <span className='pr-2' key={index}>
+                                        {ability.type}
+                                    </span> 
+                                    <b>{ability.name}</b><br />
+                                    {ability.text}
+                                </p>
+                            ))
+                        }
+                    </div>
+                    <div>
+                        Ataques: <br />
+                        {
+                            pokemon.attacks.map((atack, index) => (
+                                <div key={index}>
+                                    <b>
+                                        {
+                                            atack.cost.map((cost, index) => (
+                                            <span className='pr-2' key={index}>
+                                                {cost}
+                                            </span> 
+                                        ))}
+                                        {atack.name}  {atack.damage}
+                                    </b>
+                                    <br />
+                                    {atack.text}
+                                    <hr />
+                                </div>
+                            ))
+                        }
+                        <hr />
+                    </div>
+                    <div>
+                        reglas:
+                        {
+                            pokemon.rules.map((rule, index) => (
+                                <p key={index}>
+                                    {rule}
+                                </p>
+                            ))
+                        }
+                        <hr />
+                    </div>
+                    <div>
+                        debilidades:
+                        { pokemon.weaknesses ? 
+                                pokemon.weaknesses.map((weakness, index) => (
+                                <span key={index}>
+                                     {weakness.type} - {weakness.value}
+                                </span> 
+                            ))
+                        : 
+                            <span>
+                                N/A
+                            </span>
+                        }
+                        <br />
+                        resistencias:
+                        { pokemon.resistances ? 
+                                pokemon.resistances.map((resistance, index) => (
+                                    <span key={index}>
+                                            {resistance.type} - {resistance.value}
+                                    </span> 
+                            ))
+                        : 
+                            <span>
+                                N/A
+                            </span>
+                        }
+                        <br />
+                        retirada:
+                        { pokemon.retreatCost ? 
+                            pokemon.retreatCost.map((cost, index) => (
+                                <span key={index}>
+                                     {cost}
+                                </span> 
+                            ))
+                        : 
+                            <span>
+                                N/A
+                            </span>
+                        }
+                        <hr />
+                    </div>
+                    <div>
+                        {pokemon.artist} - {pokemon.rarity} - {pokemon.set.name}
+                        <hr />
+                    </div>
+                    <div>
+                    {pokemon.number}/{pokemon.set.printedTotal} - {pokemon.regulationMark}
+                    <hr />
+                    </div>
                 </div>
             </div>
         </div>
