@@ -1,17 +1,9 @@
 'use client'
 import Link from 'next/link'
-import i18n from '@/utils/i18n.js'
-import { useState } from 'react';
-import NavIcon from '@/img/pokedex.png';
+import NavIcon from '/public/images/pokedex.png';
+import Image from 'next/image';
 
 export default function Navbar() {
-    const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
-
-    const changeLanguage = (lang) => {
-        i18n.changeLanguage(lang);
-        setCurrentLanguage(lang);
-      };
-
       
     return (
         <header>
@@ -19,12 +11,17 @@ export default function Navbar() {
                 <div className="container m-auto flex justify-between">
                     <h1 className="text-3xl">
                         <Link href="/">
-                            <img src={NavIcon.src} alt="Inicio" className='max-w-8'/>
+                            <Image 
+                                src={NavIcon.src}
+                                alt='/'
+                                width="32"
+                                height="32"
+                                className='max-w-8'
+                            />
                         </Link>
                     </h1>
                     <ul className='flex gap-2 items-center text-white font-bold'>
                         <li className='list-none'>
-                            <Link href="/cards">{i18n.t('cardsdex')}</Link>
                         </li>
                     </ul>
                 </div>

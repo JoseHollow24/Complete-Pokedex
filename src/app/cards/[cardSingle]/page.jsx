@@ -1,5 +1,4 @@
-//import PokemonInfo from "@/components/PokemonInfo";
-
+import i18n from '@/utils/i18n.js'
 import CardInfo from "@/components/CardInfo";
 
 async function loadCard(id) {
@@ -15,7 +14,7 @@ export default async function SingleCardPage( { params }) {
     return(
         <>
             <div className="container m-auto pt-16">
-                <h1 className="text-center text-3xl" >Informacion de la Carta</h1>
+                <h1 className="text-center text-3xl" >{i18n.t('cardPageTitle')}</h1>
                 <CardInfo pokemon={singleCard.data[0]}/>
             </div>
         </>
