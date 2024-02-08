@@ -1,18 +1,9 @@
 'use client'
 import Link from 'next/link'
-import i18n from '@/utils/i18n.js'
-import { useState } from 'react';
-import NavIcon from '@/../public/images/pokedex.png';
+import NavIcon from '/public/images/pokedex.png';
 import Image from 'next/image';
 
 export default function Navbar() {
-    const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
-
-    const changeLanguage = (lang) => {
-        i18n.changeLanguage(lang);
-        setCurrentLanguage(lang);
-      };
-
       
     return (
         <header>
