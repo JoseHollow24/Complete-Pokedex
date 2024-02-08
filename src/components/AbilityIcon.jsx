@@ -1,7 +1,7 @@
 import React from 'react'
-import abilityIcon from '@/../public/img/ability.png';
-import pokebodyIcon from '@/../public/img/pokebody.png';
-import pokepowerIcon from '@/../public/img/pokepower.png';
+import abilityIcon from '@/../public/images/ability.png';
+import pokebodyIcon from '@/../public/images/pokebody.png';
+import pokepowerIcon from '@/../public/images/pokepower.png';
 import Image from 'next/image';
 
 const abilitySrc = {

@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import i18n from '@/utils/i18n.js'
 import { useState } from 'react';
-import NavIcon from '@/../public/img/pokedex.png';
+import NavIcon from '@/../public/images/pokedex.png';
 import Image from 'next/image';
 
 export default function Navbar() {
