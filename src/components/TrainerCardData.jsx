@@ -18,21 +18,6 @@ export default function TrainerCardData( { trainer } ) {
                     ))}
                 </div>
             </nav>
-            {/* Efecto */}
-            {trainer.abilities &&
-                <section className='mb-4'> {
-                        trainer.abilities.map((ability, index) => (
-                            <div key={index}>
-                                <div className="flex gap-2 mb-2">
-                                    <AbilityIcon ability={ability.type}/>
-                                    <p className="font-bold text-2xl">{ability.name}</p>
-                                </div>
-                                <span className='text-sm'>{ability.text}</span>
-                            </div>
-                        ))
-                    }
-                </section>
-            }
             {/* Reglas */}
             {trainer.rules &&
                 <section  className='mb-4'>
