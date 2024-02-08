@@ -1,4 +1,5 @@
 import i18n from '@/utils/i18n.js'
+import Image from 'next/image';
 import TypesIcons from './TypesIcons'
 import AbilityIcon from './AbilityIcon'
 import cardColors from './cardColors'
@@ -8,10 +9,15 @@ export default function CardInfo( { pokemon } ) {
   return (
     <>
         <div className="md:grid md:grid-cols-6 md:max-w-4xl mx-auto mt-10">
-            <div className="md:col-span-2 px-4 mb-4">
-                <img src={pokemon.images.large} />
+            <div className="md:col-span-2 md:px-0 px-4 mb-4">
+                <Image 
+                    src={pokemon.images.large} 
+                    alt={pokemon.name}
+                    width="298"
+                    height="400"
+                />
               </div>
-              <div className="md:col-span-4 px-4 mb-4">
+              <div className="md:col-span-4 md:px-0 px-4 mb-4">
                 <div 
                 className={`${typesBg[pokemon.types[0]]} max-w-96 grid mx-auto p-4 text-white rounded`}
                 >

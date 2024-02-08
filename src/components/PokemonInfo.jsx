@@ -2,6 +2,7 @@
 import i18n from '@/utils/i18n.js'
 import { useState } from "react"
 import PokemonTypes from "./PokemonTypes";
+import Image from 'next/image';
 
 export default function PokemonInfo( { pokemon } ) {
     const [isShiny, setIsShiny] = useState(false);
@@ -43,26 +44,26 @@ export default function PokemonInfo( { pokemon } ) {
                         { isShiny ? 
                             <>
                                 <div className="bg-blue-300 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
-                                    <img className="w-auto" src={spriteFrontS}  alt={pokemon.name} />
-                                    {spriteBackS &&  (<img className="w-auto" src={spriteBackS}  alt={pokemon.name} />)}
+                                    <Image src={spriteFrontS} alt={pokemon.name} width="96" height="96" className="w-auto" />
+                                    {spriteBackS &&  (<Image src={spriteBackS} alt={pokemon.name} width="96" height="96" className="w-auto" />)}
                                 </div>
                                 { shodownBackS && (
                                     <div className="bg-blue-400 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
-                                    <img className="w-auto" src={shodownBackS}  alt={pokemon.name} />
-                                        <img className="w-auto" src={shodownFrontS}  alt={pokemon.name} />
+                                        <Image src={shodownBackS} alt={pokemon.name} width="98" height="98" className="w-auto" /> 
+                                        <Image src={shodownFrontS} alt={pokemon.name} width="98" height="98" className="w-auto" />
                                     </div>
                                 )}
                             </>
                             : 
                             <>  
                                 <div className="bg-blue-300 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
-                                    <img className="w-auto" src={spriteFrontD}  alt={pokemon.name} />
-                                    {spriteBackD &&  (<img className="w-auto" src={spriteBackD}  alt={pokemon.name} />)}
+                                    <Image src={spriteFrontD} alt={pokemon.name} width="96" height="96" className="w-auto" />
+                                    {spriteBackD &&  (<Image src={spriteBackD} alt={pokemon.name} width="96" height="96" className="w-auto" />)}
                                 </div>
                                 {shodownBackD && (
                                     <div className="bg-blue-400 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
-                                        <img className="w-auto" src={shodownBackD}  alt={pokemon.name} />
-                                        <img className="w-auto" src={shodownFrontD}  alt={pokemon.name} />
+                                        <Image src={shodownBackD} alt={pokemon.name} width="98" height="98" className="w-auto" /> 
+                                        <Image src={shodownFrontD} alt={pokemon.name} width="98" height="98" className="w-auto" />
                                     </div>
                                 )}
                             </>
@@ -79,11 +80,11 @@ export default function PokemonInfo( { pokemon } ) {
                 <div className="md:col-span-3">
                         { isShiny ? 
                             <div className="block">
-                                <img className="mx-auto" src={homeArtS} alt={pokemon.name} />
+                                <Image src={homeArtS} alt={pokemon.name} width="448" height="448" className="mx-auto" />
                             </div>
                         : 
                             <div className="block">
-                                <img className="mx-auto" src={homeArtD} alt={pokemon.name} />
+                                <Image src={homeArtD} alt={pokemon.name} width="448" height="448" className="mx-auto" />
                             </div>
                         }
                 </div>

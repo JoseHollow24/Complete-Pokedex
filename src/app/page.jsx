@@ -1,6 +1,7 @@
 'use client'
 import i18n from '@/utils/i18n.js'
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import PokemonSearch from '@/components/PokemonSearch';
 
@@ -34,7 +35,12 @@ export default  function Home() {
                         </Link>
                     </div>
                     <div className="md:col-span-2 md:col-start-3">
-                      <img src={pokemonData.dex.sprites.other["official-artwork"].front_default} alt="" />
+                      <Image 
+                        src={pokemonData.dex.sprites.other["official-artwork"].front_default}
+                        alt={pokemonData.dex.name}
+                        width="288"
+                        height="288"
+                      />
                     </div>
                   </div>
                 </>
@@ -54,7 +60,12 @@ export default  function Home() {
                                   className=' text-sky-400 font-bold text-xl underline  text-center mt-2'
                                   href={`/cards/${card.id}`}
                                 >
-                                  <img src={card.images.large} alt={card.name} />
+                                  <Image 
+                                      src={card.images.large} 
+                                      alt={card.name}
+                                      width="140"
+                                      height="196"
+                                  />
                                 </Link>
                               </div>
                             ))

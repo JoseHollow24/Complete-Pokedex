@@ -9,6 +9,8 @@ import lightningIcon from '@/img/icons/lightning.png';
 import psychicIcon from '@/img/icons/psychic.png';
 import metalIcon from '@/img/icons/metal.png';
 import waterIcon from '@/img/icons/water.png';
+import Image from 'next/image';
+
 
 const typesSrc = {
   Colorless: colorlessIcon,
@@ -26,7 +28,12 @@ const typesSrc = {
 export default function TypesIcons({type}) {
   return (
     <>
-      <img src={typesSrc[type].src} alt={type} className="w-6 border-2 border-slate-400 rounded-full"/>
+      <Image 
+        src={typesSrc[type].src} 
+        alt={type}
+        width="24" height="24"
+        className="w-6 border-2 border-slate-400 rounded-full"
+      />
     </>
   )
 }
