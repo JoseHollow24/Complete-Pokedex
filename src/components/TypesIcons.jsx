@@ -1,14 +1,14 @@
 import React from 'react'
-import colorlessIcon from '@/img/icons/colorless.png';
-import darknessIcon from '@/img/icons/darkness.png';
-import dragonIcon from '@/img/icons/dragon.png';
-import fightingIcon from '@/img/icons/fighting.png';
-import fireIcon from '@/img/icons/fire.png';
-import grassIcon from '@/img/icons/grass.png';
-import lightningIcon from '@/img/icons/lightning.png';
-import psychicIcon from '@/img/icons/psychic.png';
-import metalIcon from '@/img/icons/metal.png';
-import waterIcon from '@/img/icons/water.png';
+import colorlessIcon from '@/../public/img/icons/colorless.png';
+import darknessIcon from '@/../public/img/icons/darkness.png';
+import dragonIcon from '@/../public/img/icons/dragon.png';
+import fightingIcon from '@/../public/img/icons/fighting.png';
+import fireIcon from '@/../public/img/icons/fire.png';
+import grassIcon from '@/../public/img/icons/grass.png';
+import lightningIcon from '@/../public/img/icons/lightning.png';
+import psychicIcon from '@/../public/img/icons/psychic.png';
+import metalIcon from '@/../public/img/icons/metal.png';
+import waterIcon from '@/../public/img/icons/water.png';
 import Image from 'next/image';
 
 
