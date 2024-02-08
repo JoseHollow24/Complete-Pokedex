@@ -1,18 +1,17 @@
-import React from 'react'
+import i18n from '@/utils/i18n.js'
 import TypesIcons from './TypesIcons'
 import AbilityIcon from './AbilityIcon'
 import cardColors from './cardColors'
 
 export default function CardInfo( { pokemon } ) {
     const typesBg = cardColors;
-    console.log(cardColors)
   return (
     <>
         <div className="md:grid md:grid-cols-6 md:max-w-4xl mx-auto mt-10">
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 px-4 mb-4">
                 <img src={pokemon.images.large} />
               </div>
-              <div className="md:col-span-4">
+              <div className="md:col-span-4 px-4 mb-4">
                 <div 
                 className={`${typesBg[pokemon.types[0]]} max-w-96 grid mx-auto p-4 text-white rounded`}
                 >
@@ -54,7 +53,7 @@ export default function CardInfo( { pokemon } ) {
                     }
                     {/* Ataques */}
                     <section className='mb-4'>
-                        <p className='mb-2'>Ataques:</p>
+                        <p className='mb-2'>{i18n.t('cardAtacks')}:</p>
                         {
                             pokemon.attacks.map((atack, index) => (
                                 <div className='mb-2' key={index}>
@@ -76,7 +75,7 @@ export default function CardInfo( { pokemon } ) {
                     {/* Reglas */}
                     {pokemon.rules &&
                         <section  className='mb-4'>
-                            reglas:
+                            {i18n.t('cardRule')}:
                             { pokemon.rules && 
                                 pokemon.rules.map((rule, index) => (
                                     <p className='text-xs mb-2' key={index}>
@@ -90,7 +89,7 @@ export default function CardInfo( { pokemon } ) {
                     {/* Debilidaes, resistencias y retiradas */}
                     <section className='mb-4 grid grid-cols-3'>
                         <div>
-                            <p className='uppercase text-sm font-bold mb-2'>Debilidades:</p>
+                            <p className='uppercase text-sm font-bold mb-2'>{i18n.t('cardweaknesses')}:</p>
                             { pokemon.weaknesses ? 
                                     pokemon.weaknesses.map((weakness, index) => (
                                     <span className='flex items-center justify-start gap-1' key={index}>
@@ -104,7 +103,7 @@ export default function CardInfo( { pokemon } ) {
                             }
                         </div>
                         <div>
-                            <p className='uppercase text-sm font-bold mb-2'>Resistencias:</p>
+                            <p className='uppercase text-sm font-bold mb-2'>{i18n.t('cardResistance')}:</p>
                             { pokemon.resistances ? 
                                     pokemon.resistances.map((resistance, index) => (
                                         <span className='flex items-center justify-start gap-1' key={index}>
@@ -118,7 +117,7 @@ export default function CardInfo( { pokemon } ) {
                             }
                         </div>
                         <div>
-                            <p className='uppercase text-sm font-bold mb-2'>Retirada:</p>
+                            <p className='uppercase text-sm font-bold mb-2'>{i18n.t('cardRetreat')}:</p>
                             <span className='flex items-center justify-start gap-1'>
                             { pokemon.retreatCost ? 
                                 pokemon.retreatCost.map((cost, index) => (
@@ -135,27 +134,27 @@ export default function CardInfo( { pokemon } ) {
                     {/* otra Informacion */}
                     <section className='mb-4 grid grid-cols-3'>
                         <div>
-                            <p className='uppercase text-sm font-bold mb-2'>Artista:</p>
+                            <p className='uppercase text-sm font-bold mb-2'>{i18n.t('cardArtist')}:</p>
                             <span className='text-sm'>{pokemon.artist}</span>
                         </div>
                         <div>
-                            <p className='uppercase text-sm font-bold mb-2'>Rareza:</p>
+                            <p className='uppercase text-sm font-bold mb-2'>{i18n.t('cardRarity')}:</p>
                             <span className='text-sm'>{pokemon.rarity}</span>
                         </div>
                         <div>
-                            <p className='uppercase text-sm font-bold mb-2'>Expansion:</p>
+                            <p className='uppercase text-sm font-bold mb-2'>{i18n.t('cardExpansion')}:</p>
                             <span className='text-sm'>{pokemon.set.name}</span>
                         </div>
                     </section>
                     {/* Numero y Regulacion */}
                     <section className='mb-4 grid grid-cols-3'>
                         <div>
-                            <p className='uppercase text-sm font-bold mb-2'>Numero:</p>
+                            <p className='uppercase text-sm font-bold mb-2'>{i18n.t('cardNumber')}:</p>
                             <span className='text-sm'>{pokemon.number}/{pokemon.set.printedTotal}</span>
                         </div>
                         {pokemon.regulationMark &&
                             <div>
-                                <p className='uppercase text-sm font-bold mb-2'>Rotación:</p>
+                                <p className='uppercase text-sm font-bold mb-2'>{i18n.t('cardRotation')}:</p>
                                 <span className='uppercase text-sm bg-slate-800 rounded-full w-5  block text-center'>{pokemon.regulationMark}</span>
                             </div>
                         }

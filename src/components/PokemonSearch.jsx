@@ -1,9 +1,9 @@
 'use client'
+import i18n from '@/utils/i18n.js'
 import { useState } from "react"
 
 export default function CardSearch( { onPokemonDataChange } ) {
     const [pokemonName, setPokemonName] = useState('');
-    // const [pokemonApiDAta, setPokemonApiDAta] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -24,12 +24,10 @@ export default function CardSearch( { onPokemonDataChange } ) {
                 
                 onPokemonDataChange({dex: dexData, card: cardsData});
               } catch (error) {
-                // setPokemonApiDAta({Error: 'El pokemon no se encontró en alguna de las Apis'});
-                // onPokemonDataChange(pokemonApiDAta);
-                console.error('Error en las llamadas a la API', error);
+                alert(`${i18n.t('apiError')}`, error);
               }
         }else (
-            console.log('rellene el formulario')
+            alert(`${i18n.t('formError')}`)
         )
     }
 
@@ -49,7 +47,7 @@ export default function CardSearch( { onPokemonDataChange } ) {
                     type="submit"
                     className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 active:bg-blue-800 mx-auto" 
                 >
-                    Buscar Pokemon
+                    {i18n.t('searchPokemon')}
                 </button>
             </form>
         </div>

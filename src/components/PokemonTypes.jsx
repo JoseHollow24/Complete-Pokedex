@@ -1,4 +1,4 @@
-import React from 'react'
+import i18n from '@/utils/i18n.js'
 import typeColors from './typeColors'
 
 export default function PokemonTypes( { pokemonTypes } ) {
@@ -6,10 +6,7 @@ export default function PokemonTypes( { pokemonTypes } ) {
 
     return (
         <>   
-            <p className="text-slate-800 font-bold">
-
-                Tipos:
-            </p>
+            <p className="text-slate-800 font-bold">{i18n.t('pokeType')}</p>
             <ul className="flex">
                 {
                     pokemonTypes.map((typeItem, index) => (
