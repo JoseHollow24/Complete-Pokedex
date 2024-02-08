@@ -8,7 +8,8 @@ const cardColors = {
     Lightning: 'bg-amber-400',
     Psychic: 'bg-fuchsia-600',
     Metal: 'bg-neutral-500',
-    Water: 'bg-sky-700'
+    Water: 'bg-sky-700',
+    Fairy: 'bg-pink-700'
 }
 
 export default cardColors;
