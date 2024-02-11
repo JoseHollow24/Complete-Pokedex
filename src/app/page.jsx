@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PokemonSearch from '@/components/PokemonSearch';
 
-export default  function Home() {
+export default function Home() {
     //useState con los resultados de busqueda
     const [pokemonData, setPokemonData] = useState(null);
     // Función para recibir la respuesta del API desde el buscador hijo
@@ -29,8 +29,9 @@ export default  function Home() {
                     <div>
                       <p className="text-slate-800 font-bold capitalize text-2xl mb-4">{pokemonData.dex.name}</p>
                       <Link
-                        className=' text-sky-400 font-bold text-xl underline  text-center mt-2'
+                        className=' text-sky-400 font-bold text-xl underline text-center mt-2'
                         href={`/${pokemonData.dex.name}`}
+                        aria-label={`${i18n.t('searchDetails')} ${pokemonData.dex.name}`}
                         >
                             {i18n.t('searchDetails')}
                         </Link>
@@ -58,7 +59,7 @@ export default  function Home() {
                             pokemonData.card.data.map((card, index) => (
                               <div className="m-1" key={index}>
                                 <Link
-                                  className=' text-sky-400 font-bold text-xl underline  text-center mt-2'
+                                  className=' text-sky-400 font-bold text-xl underline text-center mt-2'
                                   href={`/cards/${card.id}`}
                                 >
                                   <Image 

@@ -45,7 +45,7 @@ export default function PokemonInfo( { pokemon } ) {
                             <>
                                 <div className="bg-blue-300 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
                                     <Image src={spriteFrontS} alt={pokemon.name} width="96" height="96" className="w-auto" />
-                                    {spriteBackS &&  (<Image src={spriteBackS} alt={pokemon.name} width="96" height="96" className="w-auto" />)}
+                                    {spriteBackS && (<Image src={spriteBackS} alt={pokemon.name} width="96" height="96" className="w-auto" />)}
                                 </div>
                                 { shodownBackS && (
                                     <div className="bg-blue-400 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
@@ -58,7 +58,7 @@ export default function PokemonInfo( { pokemon } ) {
                             <>  
                                 <div className="bg-blue-300 flex rounded-sm items-center justify-around mt-4 p-4 h-48">
                                     <Image src={spriteFrontD} alt={pokemon.name} width="96" height="96" className="w-auto" />
-                                    {spriteBackD &&  (<Image src={spriteBackD} alt={pokemon.name} width="96" height="96" className="w-auto" />)}
+                                    {spriteBackD && (<Image src={spriteBackD} alt={pokemon.name} width="96" height="96" className="w-auto" />)}
                                 </div>
                                 {shodownBackD && (
                                     <div className="bg-blue-400 flex rounded-sm items-center justify-around mt-4 p-4 h-48">

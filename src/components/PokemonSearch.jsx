@@ -36,7 +36,11 @@ export default function CardSearch( { onPokemonDataChange } ) {
         <>
         <div>
             <form onSubmit={handleSubmit}>
+                <label htmlFor="pokemonName" className="sr-only">
+                {i18n.t('searchPokemonLabel')}
+                </label>
                 <input 
+                    id="pokemonName"
                     type="text"
                     className="block border border-slate-400 border-rounded px-4 py-2 mb-2"
                     placeholder="Ingresa el pokémon"
@@ -45,6 +49,7 @@ export default function CardSearch( { onPokemonDataChange } ) {
                 />
                 <button 
                     type="submit"
+                    aria-label={i18n.t('searchPokemon')}
                     className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 active:bg-blue-800 mx-auto" 
                 >
                     {i18n.t('searchPokemon')}

@@ -13,6 +13,7 @@ i18next.init({
           pokedex: 'Pokedex',
           searchDetails: 'See details',
           //search Component
+          searchPokemonLabel: 'type Pokemon name',
           searchPokemon: 'Search Pokemon',
           pokemondex: 'Pokemon Pokedex',
           formError: 'Complette the form',
@@ -44,6 +45,7 @@ i18next.init({
           pokedex: 'Pokédex',
           searchDetails: 'Ver detalles',
           //search Component
+          searchPokemonLabel: 'ingrese el nombre del Pokémon',
           searchPokemon: 'Buscar Pokémon',
           pokemondex: 'Pokédex de Pokémon',
           formError: 'Complete el formulario por favor',
