@@ -10,7 +10,8 @@ export default function Home() {
     const [pokemonData, setPokemonData] = useState(null);
     // Función para recibir la respuesta del API desde el buscador hijo
     const handlePokemonData = (data) => {
-      console.log(data.card.data)
+      console.log('///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
+      console.log(data)
       setPokemonData(data);
     };
   

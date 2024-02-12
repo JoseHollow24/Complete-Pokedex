@@ -12,14 +12,17 @@ export default function Navbar() {
                 <div className="container m-auto flex justify-between">
                     <h1 className="text-3xl">
                         <a className="sr-only">Inicio</a>
-                        <Link href="/">
+                        <Link 
+                            aria-label={i18n.t('pokedex')}
+                            href="/"
+                        >
                             <Image 
                                 src={NavIcon.src}
                                 alt='/'
                                 width="32"
                                 height="32"
                                 className='max-w-8'
-                                aria-label={i18n.t('pokedex')}
+                                
                             />
                         </Link>
                     </h1>

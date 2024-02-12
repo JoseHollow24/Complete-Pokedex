@@ -2,7 +2,7 @@
 import i18n from '@/utils/i18n.js'
 import { useState } from "react"
 
-export default function CardSearch( { onPokemonDataChange } ) {
+export default function PokemonSearch( { onPokemonDataChange } ) {
     const [pokemonName, setPokemonName] = useState('');
 
     const handleSubmit = (e) => {
@@ -24,10 +24,10 @@ export default function CardSearch( { onPokemonDataChange } ) {
                 
                 onPokemonDataChange({dex: dexData, card: cardsData});
               } catch (error) {
-                alert(`${i18n.t('apiError')}`, error);
+                console.log(`${i18n.t('apiError')}`, error);
               }
         }else (
-            alert(`${i18n.t('formError')}`)
+            console.log(`${i18n.t('formError')}`)
         )
     }
 
@@ -43,7 +43,7 @@ export default function CardSearch( { onPokemonDataChange } ) {
                     id="pokemonName"
                     type="text"
                     className="block border border-slate-400 border-rounded px-4 py-2 mb-2"
-                    placeholder="Ingresa el pokémon"
+                    placeholder={i18n.t('searchPokemonLabel')}
                     value={pokemonName}
                     onChange={(e) => setPokemonName(e.target.value)}
                 />
