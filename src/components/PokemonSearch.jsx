@@ -1,6 +1,7 @@
 'use client'
 import i18n from '@/utils/i18n.js'
 import { useState } from "react"
+import PokeApiService from "./PokeApiService"
 
 export default function PokemonSearch( { onPokemonDataChange } ) {
     const [pokemonName, setPokemonName] = useState('');
@@ -13,16 +14,8 @@ export default function PokemonSearch( { onPokemonDataChange } ) {
     const searchPokemon = async () => {
         if (pokemonName.trim() !== '') {
             try {
-                const lowerCasePokemonName = pokemonName.toLowerCase();
-                // Realiza la primera llamada a la API
-                const pokedexResponse = await fetch (`https://pokeapi.co/api/v2/pokemon/${lowerCasePokemonName}`);
-                const dexData = await pokedexResponse.json();
-
-                // Realiza la segunda llamada a la API
-                const cardDexResponse = await fetch (`https://api.pokemontcg.io/v2/cards?q=name:${lowerCasePokemonName}`);
-                const cardsData = await cardDexResponse.json();
-                
-                onPokemonDataChange({dex: dexData, card: cardsData});
+                const data = await PokeApiService.searchPokemon(pokemonName);
+                onPokemonDataChange(data);
               } catch (error) {
                 console.log(`${i18n.t('apiError')}`, error);
               }
