@@ -14,7 +14,7 @@ export default function PokemonSearch( { onPokemonDataChange } ) {
     const searchPokemon = async () => {
         if (pokemonName.trim() !== '') {
             try {
-                const data = await PokeApiService.searchPokemon(pokemonName);
+                const data = await PokeApiService(pokemonName);
                 onPokemonDataChange(data);
               } catch (error) {
                 console.log(`${i18n.t('apiError')}`, error);
